@@ -12,7 +12,7 @@
     <button id="newTaskBtn">Create new task</button>
     <script>
         function render(data) {
-            data.forEach(o => list.appendChild(new Option(o.name, o.id)))
+            data.forEach(o => userSelect.appendChild(new Option(o.name, o.id)))
         }
         // This need to be fixed to show 
         document.addEventListener("DOMContentLoaded", async ()=>{
@@ -21,6 +21,7 @@
             });
             const data = await response.json();
             window.data = data;
+            render(data);
         });
     </script>
 </body>
