@@ -10,5 +10,18 @@
     <select name="userSelect" id="userSelect"></select>
     <div id="allTasks">Your user To-Do task will populate here</div>
     <button id="newTaskBtn">Create new task</button>
+    <script>
+        function render(data) {
+            data.forEach(o => list.appendChild(new Option(o.name, o.id)))
+        }
+        // This need to be fixed to show 
+        document.addEventListener("DOMContentLoaded", async ()=>{
+            const response = await fetch("http://localhost:8083/api/users", {
+                method: "GET"
+            });
+            const data = await response.json();
+            window.data = data;
+        });
+    </script>
 </body>
 </html>
