@@ -1,0 +1,73 @@
+body {
+    background-image: url("../images/christmas.jpeg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+a {
+    margin: 20px;
+    margin-top: 2rem;
+    background-color: goldenrod;
+    padding: 1.1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 3rem;
+    justify-content: center;
+    width: 15vw;
+}
+
+a:hover {
+    background-color: brown;
+    color: gold;
+}
+
+a.selected {
+    background-color: brown;
+    color: gold;
+}
+
+#homeP {
+    background-color: whitesmoke;
+    border-radius: 3rem;
+    padding: 2rem;
+    opacity: 75%;
+    text-align: left;
+    margin-right: 10rem;
+    font-size: 2rem;
+}
+
+.homeTital {
+    background-color: whitesmoke;
+    border-radius: 3rem;
+    padding: 2rem;
+    opacity: 75%;
+    text-align: left;
+    margin-right: 10rem;
+}
+
+header {
+    margin-top: 50px;
+    text-align: center;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: flex-start;
+}
+#userSelect {
+    width: 50%;
+    padding: .5rem;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+    border: 5px solid lightcoral;
+    margin-right: 10rem;
+}
+#allTasks {
+    background-color: whitesmoke;
+    border-radius: 3rem;
+    padding: 1rem;
+    opacity: 75%;
+    text-align: left;
+    margin-right: 10rem;
+}
