@@ -5,12 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New User</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <label>Full Name:<input type="text" name="newName" id="newName"></label><br>
-    <label>Username:<input type="text" name="newUserName" id="newUserName"></label><br>
-    <label>Password:<input type="text" name="newPassword" id="newPassword"></label><br>
+    <header>
+        <a href="index.html" >Homepage</a>
+        <a href="Newtodo.html">Page 2</a>
+        <a href="new_user.html"class="selected">Page 3</a>
+        <a href="todo.html">Page 4</a>
+    </header>
+    <h1 class="homeTital">Sign Up Here</h1>
+    <div id="signUp">
+    <label>Full Name: <input type="text" name="newName" id="newName" placeholder="John Doe"></label><br><br>
+    <label>Username: <input type="text" name="newUserName" id="newUserName" placeholder="John Doe34"></label><br><br>
+    <label>Password: <input type="text" name="newPassword" id="newPassword" placeholder="********"></label><br><br>
+    </div>
     <button id="submitBtn">Submit</button>
     <script>
         document.addEventListener("DOMContentLoaded", async () => {

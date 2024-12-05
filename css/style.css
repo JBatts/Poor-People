@@ -71,3 +71,25 @@ header {
     text-align: left;
     margin-right: 10rem;
 }
+#signUp{
+    background-color: whitesmoke;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    margin-right: 10rem;
+    border-radius: 3rem;
+    opacity: 75%;
+    text-align: left;
+}
+input{
+    width: 75%;
+    border: 5px solid lightcoral;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+#submitBtn{
+    margin-right: 10rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: green;
+    color: white;
+}
