@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do</title>
 </head>
+
 <body>
     <h1>Looking for something to do?</h1>
     <select name="userSelect" id="userSelect"></select>
@@ -14,15 +16,54 @@
         function render(data) {
             data.forEach(o => userSelect.appendChild(new Option(o.name, o.id)))
         }
+        function renderTasks(tasks) {
+            allTasks.innerHTML = ""; // Clear previous tasks
+            if (tasks.length === 0) {
+                allTasks.innerHTML = "<p>No tasks found for this user.</p>";
+                return;
+            }
+            tasks.forEach(task => {
+                const taskElement = document.createElement("div");
+                taskElement.innerHTML = `
+                    <h1>Category: ${task.category}</h1>
+                    <h2>Description: ${task.description}</h2>
+                    <h3>Deadline: ${task.deadline}</h3>
+                    <h3>Priority: ${task.priority}</h3>
+                    <hr>
+                `;
+                allTasks.appendChild(taskElement);
+            });
+        }
         // This need to be fixed to show 
-        document.addEventListener("DOMContentLoaded", async ()=>{
+        document.addEventListener("DOMContentLoaded", async () => {
+            userSelect.addEventListener("change", () => {
+                const userId = userSelect.value;
+                const userTasks = data2.filter(task => task.id == userId); // Filter tasks for the selected user
+                renderTasks(userTasks);
+ 
+                //  allTasks.innerHTML="show"
+                //const userId = userSelect.value
+                // const userTask = data2.find(o => o.id == userId)
+                // allTasks.innerHTML = `
+                // <h1> ${userTask.category} </h1>
+                // <h2> ${userTask.description}</h2>
+                // <h3> ${userTask.deadline} </h3>
+                // <h3> ${userTask.priority} </h3> 
+                // `
+            })
             const response = await fetch("http://localhost:8083/api/users", {
                 method: "GET"
             });
             const data = await response.json();
             window.data = data;
+            const response2 = await fetch("http://localhost:8083/api/todos", {
+                method: "GET"
+            });
+            const data2 = await response2.json();
+            window.data2=data2
             render(data);
         });
-    </script>
+        </script>
 </body>
+
 </html>
