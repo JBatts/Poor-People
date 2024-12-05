@@ -38,7 +38,7 @@
         document.addEventListener("DOMContentLoaded", async () => {
             userSelect.addEventListener("change", () => {
                 const userId = userSelect.value;
-                const userTasks = data2.filter(task => task.id == userId); // Filter tasks for the selected user
+                const userTasks = data2.filter(task => task.userid == userId); // Filter tasks for the selected user
                 renderTasks(userTasks);
  
                 //  allTasks.innerHTML="show"
