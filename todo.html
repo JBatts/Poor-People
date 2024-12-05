@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
+<header>
+    <a href="index.html" >Homepage</a>
+    <a href="Newtodo.html">Page 2</a>
+    <a href="test.html">Page 3</a>
+    <a href="todo.html"class="selected">Page 4</a>
+</header>
 <body>
-    <h1>Looking for something to do?</h1>
+    <h1 class="homeTital">Looking for something to do?</h1>
     <select name="userSelect" id="userSelect"></select>
     <div id="allTasks">Your user To-Do task will populate here</div>
-    <button id="newTaskBtn">Create new task</button>
     <script>
         function render(data) {
             data.forEach(o => userSelect.appendChild(new Option(o.name, o.id)))
