@@ -11,16 +11,18 @@
 <body>
     <header>
         <a href="index.html">Homepage</a>
-        <a href="Newtodo.html">Page 2</a>
-        <a href="new_user.html" class="selected">Page 3</a>
-        <a href="todo.html">Page 4</a>
+        <a href="Newtodo.html" class="selected">Add To Do</a>
+        <a href="new_user.html">Sign Up</a>
+        <a href="todo.html">Tasks</a>
     </header>
-    <h1>Add a new todo</h1>
-    <label>userId: <input type="number" id="userId"></label><br><br>
-    <label>category: <input type="text" id="category"></label><br><br>
-    <label>description: <input type="text" id="description"></label><br><br>
-    <label>deadline: <input type="date" id="deadline"></label><br><br>
-    <label>priority: <input type="text" id="priority"></label><br><br>
+    <h1 class="homeTital">Add a new todo</h1>
+    <div id="newTodo">
+    <label>userId: <br> <input type="number" id="userId"></label><br><br>
+    <label>category: <br> <input type="text" id="category"></label><br><br>
+    <label>description: <br> <input type="text" id="description"></label><br><br>
+    <label>deadline: <br> <input type="date" id="deadline"></label><br><br>
+    <label>priority: <br> <input type="text" id="priority"></label><br><br>
+    </div>  
     <button id="newTask">
         Create New Task
     </button>
