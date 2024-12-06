@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <header>
-        <a href="index.html" >Homepage</a>
+        <a href="index.html">Homepage</a>
         <a href="Newtodo.html">Page 2</a>
-        <a href="new_user.html"class="selected">Page 3</a>
+        <a href="new_user.html" class="selected">Page 3</a>
         <a href="todo.html">Page 4</a>
     </header>
     <h1>Add a new todo</h1>
-    <label>userId: <input type="text" id="userId"></label><br><br>
+    <label>userId: <input type="number" id="userId"></label><br><br>
     <label>category: <input type="text" id="category"></label><br><br>
     <label>description: <input type="text" id="description"></label><br><br>
     <label>deadline: <input type="date" id="deadline"></label><br><br>
-    <label>priority: <input type="date" id="priority"></label><br><br>
+    <label>priority: <input type="text" id="priority"></label><br><br>
     <button id="newTask">
-        Create New Task 
+        Create New Task
     </button>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            newTask.addEventListener("click", async () => {
+                const bodyData = {
+                    "userid": userId.value,
+                    "category": category.value,
+                    "description": description.value,
+                    "deadline": deadline.value,
+                    "priority": priority.value
+                };
+                const response = await fetch("http://localhost:8083/api/todos", {
+                    method: "POST",
+                    body: JSON.stringify(bodyData),
+                    headers: { "Content-type": "application/json; charset=UTF-8" }
+
+                });
+                const data = await response.json()
+                window.location = "todo.html";
+            })
+        });
+    </script>
 </body>
+
 </html>
