@@ -44,7 +44,7 @@ a.selected {
     border-radius: 3rem;
     padding: 2rem;
     opacity: 75%;
-    text-align: left;
+    text-align: center;
     margin-right: 10rem;
 }
 
@@ -87,6 +87,23 @@ input{
     padding: 0.5rem;
 }
 #submitBtn{
+    margin-right: 10rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: green;
+    color: white;
+}
+#newTodo{
+    background-color: whitesmoke;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    margin-right: 10rem;
+    border-radius: 3rem;
+    opacity: 75%;
+    text-align: center;
+
+}
+#newTask{
     margin-right: 10rem;
     padding: 1rem;
     border-radius: 2rem;
