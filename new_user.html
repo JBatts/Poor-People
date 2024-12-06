@@ -29,16 +29,17 @@
                 "username": newUserName.value,
                 "password": newPassword.value,
 
-            }
+            };
             const response = await fetch("http://localhost:8083/api/users", {
                 method: "POST",
                 body: JSON.stringify(bodyData),
                 headers: {"Content-type": "application/json; charset=UTF-8"}
 
-            })
-            const data = await response.json()
-        })
-        })
+            });
+            const data = await response.json();
+            window.location = "index.html";
+        });
+        });
     
     </script>
 </body>
